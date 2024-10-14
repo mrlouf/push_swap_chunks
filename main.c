@@ -6,7 +6,7 @@
 /*   By: nponchon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:08:51 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/14 12:14:10 by nponchon         ###   ########.fr       */
+/*   Updated: 2024/10/14 12:36:22 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	int		*args;
 	t_list	*stack;
 
-	if (ac > 2)
+	if (ac >= 2)
 	{
 		args = get_args(av);
 		stack = form_list(args, ac - 1);
@@ -26,7 +26,6 @@ int	main(int ac, char **av)
 	//	ft_printf("%d\n", ft_lstsize(stack));
 		/*	TODO
 		 *	- check duplicates?
-		 *	- add each number in a node and form list (stack a)
 		 *	- code movements: push, rotate, etc. w/ printf
 		 *	- set up sorting algo
 		 *	- return stack b
