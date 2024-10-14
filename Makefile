@@ -20,7 +20,7 @@ LIBFT		=	libft.a
 
 # -=-=-=-=-    FLAGS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
 
-CC		=	-cc
+CC			=	-cc
 CFLAGS		=	-Werror -Wextra -Wall
 INCLUDE		=	-I
 
@@ -35,7 +35,7 @@ $(LIBFT):
 	make -C $(LIBDIR)
 
 %.o: %.c $(HEADER) $(MAKE)
-	$(CC) $(CFLAGS) -I./ -c $< -o $@
+	$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJS)

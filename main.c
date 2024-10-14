@@ -1,14 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nponchon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 10:08:51 by nponchon          #+#    #+#             */
+/*   Updated: 2024/10/14 12:14:10 by nponchon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include "../Libft/libft.h"
+#include "./Libft/libft.h"
 
 int	main(int ac, char **av)
 {
-	int	*stack_a;
+	int		*args;
+	t_list	*stack;
 
 	if (ac > 2)
 	{
-		stack_a = get_args(av);
-
+		args = get_args(av);
+		stack = form_list(args, ac - 1);
+	//	ft_printf("arg 3 = %d\n", args[2]);
+	//	ft_printf("%d\n", ft_lstsize(stack));
 		/*	TODO
 		 *	- check duplicates?
 		 *	- add each number in a node and form list (stack a)
@@ -16,13 +31,11 @@ int	main(int ac, char **av)
 		 *	- set up sorting algo
 		 *	- return stack b
 		 *	*/
-		int i = 0;
-		while (i < ac - 1)
+		while (stack != NULL)
 		{
-			printf("%d\n", stack_a[i]);
-			i++;
+			ft_printf("%d\n", stack->content);
+			stack = stack->next;
 		}
-		ft_printf("nbr args = %d\n", i);
 	}
 	return (0);
 }
