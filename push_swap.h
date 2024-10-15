@@ -18,5 +18,6 @@
 int		*get_args(char **array);
 int		check_format(char **array);
 t_list	*form_list(int *array, int count);
+void	free_stack(t_list *lst);
 
 #endif

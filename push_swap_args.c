@@ -6,12 +6,20 @@
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:08:34 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/15 17:26:05 by nponchon         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:55:41 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "./Libft/libft.h"
+
+void	free_stack(t_list *lst)
+{
+	if (lst == NULL)
+		return ;
+	free_stack(lst->next);
+	free(lst);
+}
 
 t_list	*form_list(int *array, int count)
 {
@@ -24,7 +32,11 @@ t_list	*form_list(int *array, int count)
 	while (i < count)
 	{
 		new = ft_lstnew(array[i++]);
-			// add free_list function in case of failloc
+		if (!new)
+		{
+			free_stack(lst);
+			return (NULL);
+		}
 		ft_lstadd_back(&lst, new);
 	}
 	free(array);
