@@ -21,7 +21,7 @@ LIBFT		=	libft.a
 # -=-=-=-=-    FLAGS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
 
 CC			=	-cc
-CFLAGS		=	-Werror -Wextra -Wall
+CFLAGS		=	-Werror -Wextra -Wall -g -fsanitize=address
 INCLUDE		=	-I
 
 # -=-=-=-=-    TARGETS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #

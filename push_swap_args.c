@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:08:34 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/14 11:51:34 by nponchon         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:40:44 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_format(char **array)
 	while (array[i])
 	{
 		j = 0;
-		if (array[i][j] == '-' && j == 0)
+		if ((array[i][j] == '-' || array[i][j] == '+') && j == 0)
 			j++;
 		while (array[i][j])
 		{
@@ -59,13 +59,26 @@ int	*get_args(char **array)
 {
 	int	*args;
 	int	i;
+	int	j;
+	int	len;
 
-	i = check_format(array);
-	args = (int *)malloc(sizeof(int) * (i - 1));
+	len = check_format(array) - 1;
+	args = (int *)malloc(sizeof(int) * (len));
 	if (!args)
 		return (NULL);
 	i = 0;
 	while (array[++i] != NULL)
+	{
+		j = -1;
+		while (++j < len)
+		{
+			if (ft_atoi(array[i]) == args[j])
+			{
+				write(2, "Error\n", 6);
+				exit(1);
+			}
+		}
 		args[i - 1] = ft_atoi(array[i]);
+	}
 	return (args);
 }

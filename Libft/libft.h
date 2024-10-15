@@ -6,7 +6,7 @@
 /*   By: nponchon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:20:08 by nponchon          #+#    #+#             */
-/*   Updated: 2024/09/23 16:50:36 by nponchon         ###   ########.fr       */
+/*   Updated: 2024/10/15 13:51:49 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 typedef struct s_list
 {
-	int			content;
+	int				content;
 	struct s_list	*next;
 }	t_list;
 
