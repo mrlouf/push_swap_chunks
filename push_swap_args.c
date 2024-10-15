@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:08:34 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/15 12:40:44 by nponchon         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:26:05 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_list	*form_list(int *array, int count)
 			// add free_list function in case of failloc
 		ft_lstadd_back(&lst, new);
 	}
+	free(array);
 	return (lst);
 }
 
