@@ -13,12 +13,21 @@
 #include "push_swap.h"
 #include "./Libft/libft.h"
 
-void	free_stack(t_list *lst)
+void	free_stack(t_list **lst)
 {
-	if (lst == NULL)
+	t_list	*current;
+	t_list	*tmp;
+	
+	if (lst == NULL || *lst == NULL)
 		return ;
-	free_stack(lst->next);
-	free(lst);
+	current = *lst;
+	while (current)
+	{
+		tmp = current->next;
+		free(current->next);
+		free(current);
+		current = tmp;
+	}
 }
 
 t_list	*form_list(int *array, int count)
@@ -34,7 +43,7 @@ t_list	*form_list(int *array, int count)
 		new = ft_lstnew(array[i++]);
 		if (!new)
 		{
-			free_stack(lst);
+			free_stack(&lst);
 			return (NULL);
 		}
 		ft_lstadd_back(&lst, new);

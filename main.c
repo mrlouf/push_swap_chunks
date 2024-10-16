@@ -34,7 +34,12 @@ int	main(int ac, char **av)
 			ft_printf("%d\n", stack->content);
 			stack = stack->next;
 		}
-		free_stack(stack);
+		free_stack(&stack);
+		while (stack != NULL)
+		{
+			ft_printf("%d\n", stack->content);
+			stack = stack->next;
+		}
 	}
 	return (0);
 }
