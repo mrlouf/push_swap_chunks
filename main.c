@@ -29,17 +29,13 @@ int	main(int ac, char **av)
 		 *	- set up sorting algo: return nothing if input is already sorted
 		 *	- return stack b
 		 *	*/
-		while (stack != NULL)
-		{
-			ft_printf("%d\n", stack->content);
-			stack = stack->next;
-		}
+        t_list *temp = stack;
+        while (temp != NULL)
+        {
+            ft_printf("%d\n", temp->content);
+            temp = temp->next;
+        }
 		free_stack(&stack);
-		while (stack != NULL)
-		{
-			ft_printf("%d\n", stack->content);
-			stack = stack->next;
-		}
 	}
 	return (0);
 }
