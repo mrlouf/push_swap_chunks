@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nponchon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 12:17:55 by nponchon          #+#    #+#             */
-/*   Updated: 2024/09/16 12:19:28 by nponchon         ###   ########.fr       */
+/*   Created: 2024/10/18 18:56:46 by nponchon          #+#    #+#             */
+/*   Updated: 2024/10/18 19:04:11 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	print_error(void)
 {
-	write(fd, &c, 1);
+	write(2, "Error\n", 6);
+	exit(1);
 }

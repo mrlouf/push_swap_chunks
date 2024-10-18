@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nponchon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 13:32:06 by nponchon          #+#    #+#             */
-/*   Updated: 2024/09/20 12:25:24 by nponchon         ###   ########.fr       */
+/*   Created: 2024/10/18 18:53:40 by nponchon          #+#    #+#             */
+/*   Updated: 2024/10/18 18:54:48 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+void	free_stack(t_list **lst)
 {
-	void	*ptr;
+	t_list	*current;
+	t_list	*tmp;
 
-	ptr = (void *)malloc(nmemb * size);
-	if (ptr == NULL)
-		return (ptr);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	if (lst == NULL || *lst == NULL)
+		return ;
+	current = *lst;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*lst = NULL;
 }
-
-/*
-int	main(void)
-{
-	ft_calloc(0, 0);
-	return (0);
-}*/

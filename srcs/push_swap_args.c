@@ -11,47 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./Libft/libft.h"
-
-void	free_stack(t_list **lst)
-{
-	t_list	*current;
-	t_list	*tmp;
-
-	if (lst == NULL || *lst == NULL)
-		return ;
-	current = *lst;
-	while (current)
-	{
-		tmp = current->next;
-		free(current);
-		current = tmp;
-	}
-	*lst = NULL;
-}
-
-t_list	*form_list(int *array, int count)
-{
-	int		i;
-	t_list	*lst;
-	t_list	*new;
-
-	lst = NULL;
-	i = 0;
-	while (i < count)
-	{
-		new = ft_lstnew(array[i++]);
-		if (!new)
-		{
-			free_stack(&lst);
-			free(array);
-			return (NULL);
-		}
-		ft_lstadd_back(&lst, new);
-	}
-	free(array);
-	return (lst);
-}
+#include "./libft/libft.h"
 
 int	check_format(char **array)
 {
@@ -68,8 +28,7 @@ int	check_format(char **array)
 		{
 			if (!ft_isdigit(array[i][j]))
 			{
-				write(2, "Error\n", 6);
-				exit(1);
+				print_error(**stacks);
 			}
 			j++;
 		}
@@ -97,9 +56,8 @@ int	*get_args(char **array)
 		{
 			if (ft_atoi(array[i]) == args[j])
 			{
-				write(2, "Error\n", 6);
 				free(args);
-				exit(1);
+				print_error();
 			}
 		}
 		args[i - 1] = ft_atoi(array[i]);

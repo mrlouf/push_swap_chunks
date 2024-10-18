@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nponchon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 18:26:06 by nponchon          #+#    #+#             */
-/*   Updated: 2024/09/13 18:30:47 by nponchon         ###   ########.fr       */
+/*   Created: 2024/10/14 10:09:03 by nponchon          #+#    #+#             */
+/*   Updated: 2024/10/14 10:09:05 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	ft_tolower(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
-}
-/*
-int	main(void)
-{
-	char	c;
+# include "./Libft/libft.h"
 
-	c = 0;
-	while (c < 127)
-	{
-		printf("%c = %c = %c\n", c, ft_tolower(c), tolower(c));
-		c++;
-	}
-	return (0);
-}*/
+// INPUT CHECK & BUILD STACK
+
+int		*get_args(char **array);
+int		check_format(char **array);
+t_list	*form_list(int *array, int count);
+void	free_stack(t_list **lst);
+
+// MOVES
+
+
+
+#endif

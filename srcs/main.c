@@ -22,19 +22,17 @@ int	main(int ac, char **av)
 	{
 		args = get_args(av);
 		stack = form_list(args, ac - 1);
-	//	ft_printf("arg 3 = %d\n", args[2]);
-	//	ft_printf("%d\n", ft_lstsize(stack));
 		/*	TODO
 		 *	- code movements: push, rotate, etc. w/ printf
 		 *	- set up sorting algo: return nothing if input is already sorted
 		 *	- return stack b
 		 *	*/
-        t_list *temp = stack;
-        while (temp != NULL)
-        {
-            ft_printf("%d\n", temp->content);
-            temp = temp->next;
-        }
+		t_list *temp = stack;
+		while (temp != NULL)
+		{
+			ft_printf("%d\n", temp->content);
+			temp = temp->next;
+		}
 		free_stack(&stack);
 	}
 	return (0);
