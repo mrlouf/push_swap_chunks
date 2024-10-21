@@ -10,25 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*form_list(int *array, int count)
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
+
+t_stacks	*form_stack(int *array, int count)
 {
 	int		i;
-	t_list	*lst;
-	t_list	*new;
+	t_stacks	*stacks;
+	t_stack	*new;
 
-	lst = NULL;
+	stacks = (t_stacks *)malloc(sizeof(t_stacks));
+	if (!stacks)
+		return (NULL);
+	stacks = NULL;
 	i = 0;
 	while (i < count)
 	{
-		new = ft_lstnew(array[i++]);
+		new = new_stack(array[i++]);
 		if (!new)
 		{
-			free_stack(&lst);
+			free_stacks(stacks);
 			free(array);
 			print_error();
 		}
-		ft_lstadd_back(&lst, new);
+		stackadd_back(&stacks->stack_a, new);
 	}
 	free(array);
-	return (lst);
+	return (stacks);
 }

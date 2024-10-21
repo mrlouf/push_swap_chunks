@@ -10,30 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "./Libft/libft.h"
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
 
 int	main(int ac, char **av)
 {
-	int		*args;
-	t_list	*stack;
+	int			*args;
+	t_stacks	*stacks;
 
 	if (ac >= 2)
 	{
 		args = get_args(av);
-		stack = form_list(args, ac - 1);
+		stacks = NULL;
+		stacks = form_stack(args, ac - 1);
 		/*	TODO
 		 *	- code movements: push, rotate, etc. w/ printf
 		 *	- set up sorting algo: return nothing if input is already sorted
 		 *	- return stack b
-		 *	*/
-		t_list *temp = stack;
+		 *	
+		t_stack *temp = stacks->stack_a;
 		while (temp != NULL)
 		{
-			ft_printf("%d\n", temp->content);
+			ft_printf("%d\n", temp->value);
 			temp = temp->next;
-		}
-		free_stack(&stack);
+		} */
+		free_stacks(stacks);
 	}
 	return (0);
 }

@@ -10,32 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "./libft/libft.h"
-
-int	check_format(char **array)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (array[i])
-	{
-		j = 0;
-		if ((array[i][j] == '-' || array[i][j] == '+') && j == 0)
-			j++;
-		while (array[i][j])
-		{
-			if (!ft_isdigit(array[i][j]))
-			{
-				print_error(**stacks);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (i);
-}
+#include "../includes/push_swap.h"
+#include "../libft/libft.h"
 
 int	*get_args(char **array)
 {
