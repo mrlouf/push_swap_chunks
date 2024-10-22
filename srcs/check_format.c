@@ -13,6 +13,18 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
+int	check_value(char *str)
+{
+	long long	tmp;
+
+	tmp = ft_atoi(str);
+	printf("%lld\n", tmp);
+	if (tmp > INT_MAX || tmp < INT_MIN)
+		return (0);
+	else
+		return (1);
+}
+
 int	check_format(char **array)
 {
 	int	i;

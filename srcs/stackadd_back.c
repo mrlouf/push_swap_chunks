@@ -17,20 +17,10 @@ void	stackadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*tmp;
 
-	if (!new)
+	if (!new || !stack)
 		return ;
-	if (stack)
-	{
-		if (*stack == NULL)
-		{
-			stack = &new;
-			return ;
-		}
-		else
-		{
-			tmp = stacklast(*stack);
-			tmp->next = new;
-		}
-		return ;
-	}
+	tmp = stacklast(*stack);
+	tmp->next = new;
+	new->prev = tmp;
+	return ;
 }

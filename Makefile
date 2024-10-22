@@ -33,7 +33,7 @@ LIBFT		=	libft.a
 CC			=	-cc
 CFLAGS		=	-Werror -Wextra -Wall
 DBFLAGS		=	-Werror -Wextra -Wall -g -fsanitize=address
-INCLUDE		=	-I
+INCLUDE		=	-I/
 
 # -=-=-=-=-    TARGETS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -49,7 +49,7 @@ db: $(LIBFT) $(OBJS) $(SRCS) $(HEADER) $(MAKE)
 	$(CC) $(DBFLAGS) $(OBJS) $(INCLUDE)$(HEADER) $(LIBDIR)$(LIBFT) -o $(NAME)
 
 %.o: %.c $(HEADER) $(MAKE)
-	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
+	$(CC) $(CFLAGS) -I/$(HEADER) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJS)

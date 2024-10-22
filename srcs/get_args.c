@@ -13,30 +13,40 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
-int	*get_args(char **array)
+int	*get_args(char **array, int len)
 {
-	int	*args;
-	int	i;
-	int	j;
-	int	len;
+	int		*args;
+	int		i;
 
-	len = check_format(array) - 1;
 	args = (int *)malloc(sizeof(int) * (len));
 	if (!args)
 		return (NULL);
 	i = 0;
-	while (array[++i] != NULL)
+	while (++i < len)
 	{
-		j = -1;
-		while (++j < len)
+		if (check_value(array[i]))
+			args[i - 1] = ft_atoi(array[i]);
+		else
 		{
-			if (ft_atoi(array[i]) == args[j])
-			{
-				free(args);
-				print_error();
-			}
+			free(args);
+			print_error();
 		}
-		args[i - 1] = ft_atoi(array[i]);
 	}
 	return (args);
+
+	// while (array[++i] != NULL)
+	// {
+	// 	j = -1;
+	// 	while (++j < i - 1)
+	// 	{
+	// 		temp = ft_atoi(array[i]);
+	// 		if (temp > INT_MAX || temp < INT_MIN)
+	// 		{
+	// 			free(args);
+	// 			print_error();
+	// 		}
+	// 	}
+	// 	args[i - 1] = (int)temp;
+	// }
+	// return (args);
 }

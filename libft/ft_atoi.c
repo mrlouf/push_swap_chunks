@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	sign;
+	long long	nbr;
+	int			sign;
 
 	nbr = 0;
 	sign = 1;
@@ -36,10 +36,10 @@ int	ft_atoi(const char *str)
 	return (nbr * sign);
 }
 
-/*
-int	main(void)
-{
-	printf("%d\n", ft_atoi("-2147483648"));
-	printf("%d\n", atoi("-2147483648"));
-	return (0);
-}*/
+
+// int	main(void)
+// {
+// 	printf("%lld\n", ft_atoi("-2247483649"));
+// 	//printf("%d\n", atoi("-2147483648"));
+// 	return (0);
+// }

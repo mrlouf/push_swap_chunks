@@ -13,28 +13,26 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
-t_stacks	*form_stack(int *array, int count)
+t_stack	*form_stack(int *array, int count)
 {
 	int		i;
-	t_stacks	*stacks;
 	t_stack	*new;
 
-	stacks = (t_stacks *)malloc(sizeof(t_stacks));
-	if (!stacks)
-		return (NULL);
-	stacks = NULL;
+	new = NULL;
 	i = 0;
 	while (i < count)
 	{
-		new = new_stack(array[i++]);
+		if (i > 0)
+			stackadd_back(&new, new_stack(array[i]));
+		else
+			new = new_stack(array[i]);
 		if (!new)
 		{
-			free_stacks(stacks);
 			free(array);
 			print_error();
 		}
-		stackadd_back(&stacks->stack_a, new);
+		i++;
 	}
 	free(array);
-	return (stacks);
+	return (new);
 }
