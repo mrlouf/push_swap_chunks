@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:09:04 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/22 16:18:50 by nponchon         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:18:14 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	push(t_stack **from, t_stack **to)
 {
 	t_stack	*tmp;
-	
+
 	if (!*from)
 		return ;
 	tmp = (*from)->next;

@@ -12,13 +12,10 @@ LIBDIR		=	libft/
 
 SRCS		=	srcs/main.c			\
 				srcs/check_format.c	\
-				srcs/form_stack.c	\
 				srcs/free_stacks.c	\
 				srcs/get_args.c		\
 				srcs/print_error.c	\
-				srcs/new_stack.c	\
-				srcs/stackadd_back.c\
-				srcs/stacklast.c	\
+				srcs/stack_utils.c	\
 				srcs/swap.c			\
 				srcs/push.c			\
 				srcs/rotate.c		\
