@@ -32,7 +32,7 @@ void	check_double(char **array)
 		j = i;
 		while (array[++j])
 		{
-			if (ft_strnstr(array[i], array[j], 11))
+			if (ft_atoi(array[i]) == ft_atoi(array[j]))
 				print_error();
 		}
 	}

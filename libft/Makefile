@@ -54,7 +54,7 @@ $(NAME): $(OBJS) $(HEADER) $(SRCS) $(MAKE)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	
 clean:
-	/bin/rm -f $(OBJS) $(OBJS_BONUS)
+	/bin/rm -f $(OBJS)
 
 fclean: clean
 	/bin/rm -f $(NAME)

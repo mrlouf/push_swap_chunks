@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <ctype.h>
 # include <string.h>
+# include <stdarg.h>
 # include "ft_printf.h"
 
 typedef struct s_list
@@ -69,7 +70,7 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
-// BONUSES
+// LISTS
 
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);

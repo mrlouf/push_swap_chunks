@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 18:53:40 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/18 18:54:48 by nponchon         ###   ########.fr       */
+/*   Created: 2024/10/22 16:09:04 by nponchon          #+#    #+#             */
+/*   Updated: 2024/10/22 16:18:50 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
-void	free_stack(t_stack *stack)
+void	push(t_stack **from, t_stack **to)
 {
-	t_stack	*current;
 	t_stack	*tmp;
-
-	if (stack == NULL)
+	
+	if (!*from)
 		return ;
-	current = stack;
-	while (current)
-	{
-		tmp = current->next;
-		free(current);
-		current = tmp;
-	}
-	stack = NULL;
+	tmp = (*from)->next;
+	(*from)->next = *to;
+	*to = *from;
+	*from = tmp;
 }
 
-void	free_all(t_stack *stack_a, t_stack *stack_b)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	free_stack(stack_a);
-	free_stack(stack_b);
+	push(stack_b, stack_a);
+	write(1, "pa\n", 3);
+}
+
+void	push_b(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_a, stack_b);
+	write(1, "pb\n", 3);
 }
