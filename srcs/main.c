@@ -23,10 +23,8 @@ int	main(int ac, char **av)
 	{
 		len = check_format(av) - 1;
 		args = get_args(av, len);
-		// while (len-- >= 0)
-		// 	printf("%d\n", args[len--]);
 		stack_a = NULL;
-		stack_a = form_stack(args, ac - 1);
+		stack_a = form_stack(args, len);
 		/*	TODO
 		 *	- code movements: push, rotate, etc. w/ printf
 		 *	- set up sorting algo: return nothing if input is already sorted

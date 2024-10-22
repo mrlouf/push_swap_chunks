@@ -18,11 +18,12 @@ int	*get_args(char **array, int len)
 	int		*args;
 	int		i;
 
+	check_double(array);
 	args = (int *)malloc(sizeof(int) * (len));
 	if (!args)
 		return (NULL);
 	i = 0;
-	while (++i < len)
+	while (++i <= len)
 	{
 		if (check_value(array[i]))
 			args[i - 1] = ft_atoi(array[i]);
@@ -33,20 +34,4 @@ int	*get_args(char **array, int len)
 		}
 	}
 	return (args);
-
-	// while (array[++i] != NULL)
-	// {
-	// 	j = -1;
-	// 	while (++j < i - 1)
-	// 	{
-	// 		temp = ft_atoi(array[i]);
-	// 		if (temp > INT_MAX || temp < INT_MIN)
-	// 		{
-	// 			free(args);
-	// 			print_error();
-	// 		}
-	// 	}
-	// 	args[i - 1] = (int)temp;
-	// }
-	// return (args);
 }

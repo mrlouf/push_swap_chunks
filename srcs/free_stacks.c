@@ -17,7 +17,7 @@ void	free_stack(t_stack *stack)
 {
 	t_stack	*current;
 	t_stack	*tmp;
-	
+
 	if (stack == NULL)
 		return ;
 	current = stack;

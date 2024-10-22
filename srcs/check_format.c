@@ -18,11 +18,24 @@ int	check_value(char *str)
 	long long	tmp;
 
 	tmp = ft_atoi(str);
-	printf("%lld\n", tmp);
-	if (tmp > INT_MAX || tmp < INT_MIN)
-		return (0);
-	else
-		return (1);
+	return (!(tmp > INT_MAX || tmp < INT_MIN));
+}
+
+void	check_double(char **array)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (array[++i + 1])
+	{
+		j = i;
+		while (array[++j])
+		{
+			if (ft_strnstr(array[i], array[j], 11))
+				print_error();
+		}
+	}
 }
 
 int	check_format(char **array)

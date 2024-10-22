@@ -36,7 +36,6 @@ long long	ft_atoi(const char *str)
 	return (nbr * sign);
 }
 
-
 // int	main(void)
 // {
 // 	printf("%lld\n", ft_atoi("-2247483649"));
