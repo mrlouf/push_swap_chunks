@@ -51,6 +51,7 @@ void		rotate_a(t_stack **stack_a);
 void		rotate_b(t_stack **stack_b);
 void		rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void		rotate_to_min(t_stack **stack_a);
+void		rotate_to_max(t_stack **stack_a);
 void		reverse(t_stack **current);
 void		reverse_a(t_stack **stack_a);
 void		reverse_b(t_stack **stack_b);
@@ -62,5 +63,8 @@ int			is_sorted(t_stack **stack_a);
 void		sort_small(t_stack **stack_a, t_stack **stack_b, int size);
 void		sort_three(t_stack **stack_a);
 void		sort_four(t_stack **stack_a, t_stack **stack_b);
+void		sort_five(t_stack **stack_a, t_stack **stack_b);
+int			is_min(t_stack *stack_a);
+int			is_max(t_stack *stack_a);
 
 #endif

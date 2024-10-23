@@ -30,7 +30,6 @@ int	main(int ac, char **av)
 		/*	TODO
 		 *	- set up sorting algo: return nothing if input is already sorted
 		 	*/
-		//reverse_a(&stack_a);
 		sort_small(&stack_a, &stack_b, len);
 		t_stack *tmp = stack_a;
 		while (tmp != NULL)

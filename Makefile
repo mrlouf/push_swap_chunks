@@ -18,6 +18,7 @@ SRCS		=	srcs/push_swap.c	\
 				srcs/swap.c			\
 				srcs/push.c			\
 				srcs/rotate.c		\
+				srcs/rotate2.c		\
 				srcs/reverse.c		\
 				srcs/sort_small.c
 
@@ -46,7 +47,7 @@ $(LIBFT): $(MAKE)
 	make -C $(LIBDIR)
 
 %.o: %.c $(HEADER) $(MAKE)
-	$(CC) $(CFLAGS) -I/$(HEADER) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJS)
