@@ -13,6 +13,20 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
+int	is_sorted(t_stack **stack_a)
+{
+	t_stack	*tmp;
+	
+	tmp = *stack_a;
+	while (tmp->next)
+	{
+		if (tmp->value > tmp->next->value)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
 t_stack	*new_stack(int value)
 {
 	t_stack	*new_stack;

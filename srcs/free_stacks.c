@@ -13,6 +13,12 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
 void	free_stack(t_stack *stack)
 {
 	t_stack	*current;

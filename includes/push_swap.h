@@ -40,10 +40,10 @@ t_stack		*stacklast(t_stack *stack);
 
 // MOVES
 
-void		swap(t_stack *current);
-void		swap_a(t_stack *current);
-void		swap_b(t_stack *current);
-void		swap_ab(t_stack *stack_a, t_stack *stack_b);
+void		swap(t_stack **current);
+void		swap_a(t_stack **current);
+void		swap_b(t_stack **current);
+void		swap_ab(t_stack **stack_a, t_stack **stack_b);
 void		push(t_stack **from, t_stack **to);
 void		push_a(t_stack **stack_a, t_stack **stack_b);
 void		push_b(t_stack **stack_a, t_stack **stack_b);
@@ -56,5 +56,9 @@ void		reverse_a(t_stack **stack_a);
 void		reverse_b(t_stack **stack_b);
 void		reverse_ab(t_stack **stack_a, t_stack **stack_b);
 
+//	SORTING ALGO
+
+int			is_sorted(t_stack **stack_a);
+void		sort_small(t_stack **stack_a, t_stack **stack_b, int size);
 
 #endif

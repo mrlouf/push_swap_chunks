@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -28,11 +28,10 @@ int	main(int ac, char **av)
 		stack_b = NULL;
 		stack_a = form_stack(args, len);
 		/*	TODO
-		 *	- code movements: push, rotate, etc. w/ printf
 		 *	- set up sorting algo: return nothing if input is already sorted
-		 *	- return stack b
-		 */	
-		reverse_a(&stack_a);
+		 	*/
+		//reverse_a(&stack_a);
+		sort_small(&stack_a, &stack_b, len);
 		t_stack *tmp = stack_a;
 		while (tmp != NULL)
 		{

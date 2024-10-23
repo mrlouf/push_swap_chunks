@@ -10,16 +10,16 @@ LIBDIR		=	libft/
 
 # -=-=-=-=-    FILES -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-SRCS		=	srcs/main.c			\
+SRCS		=	srcs/push_swap.c	\
 				srcs/check_format.c	\
 				srcs/free_stacks.c	\
 				srcs/get_args.c		\
-				srcs/print_error.c	\
 				srcs/stack_utils.c	\
 				srcs/swap.c			\
 				srcs/push.c			\
 				srcs/rotate.c		\
-				srcs/reverse.c
+				srcs/reverse.c		\
+				srcs/sort_small.c
 
 HEADER		=	includes/push_swap.h
 
