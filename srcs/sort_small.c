@@ -39,6 +39,14 @@ void	sort_three(t_stack **stack_a)
 	}
 }
 
+void	sort_four(t_stack **stack_a, t_stack ** stack_b)
+{
+	rotate_to_min(stack_a);
+	push_b(stack_a, stack_b);
+	sort_three(stack_a);
+	push_a(stack_a, stack_b);
+}
+
 void	sort_small(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	(void)stack_b;
@@ -48,4 +56,6 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b, int size)
 		swap_a(stack_a);
 	if (size == 3)
 		sort_three(stack_a);
+	if (size == 4)
+		sort_four(stack_a, stack_b);
 }

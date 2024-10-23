@@ -50,6 +50,7 @@ void		rotate(t_stack **current);
 void		rotate_a(t_stack **stack_a);
 void		rotate_b(t_stack **stack_b);
 void		rotate_ab(t_stack **stack_a, t_stack **stack_b);
+void		rotate_to_min(t_stack **stack_a);
 void		reverse(t_stack **current);
 void		reverse_a(t_stack **stack_a);
 void		reverse_b(t_stack **stack_b);
@@ -60,5 +61,6 @@ void		reverse_ab(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted(t_stack **stack_a);
 void		sort_small(t_stack **stack_a, t_stack **stack_b, int size);
 void		sort_three(t_stack **stack_a);
+void		sort_four(t_stack **stack_a, t_stack **stack_b);
 
 #endif
