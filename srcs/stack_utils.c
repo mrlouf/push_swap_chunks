@@ -16,7 +16,7 @@
 int	is_sorted(t_stack **stack_a)
 {
 	t_stack	*tmp;
-	
+
 	tmp = *stack_a;
 	while (tmp->next)
 	{

@@ -37,7 +37,6 @@ t_stack		*new_stack(int value);
 void		stackadd_back(t_stack **stack, t_stack *new);
 t_stack		*stacklast(t_stack *stack);
 
-
 // MOVES
 
 void		swap(t_stack **current);
@@ -60,5 +59,6 @@ void		reverse_ab(t_stack **stack_a, t_stack **stack_b);
 
 int			is_sorted(t_stack **stack_a);
 void		sort_small(t_stack **stack_a, t_stack **stack_b, int size);
+void		sort_three(t_stack **stack_a);
 
 #endif
