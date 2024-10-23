@@ -48,13 +48,16 @@ int	check_format(char **array)
 	{
 		j = 0;
 		if ((array[i][j] == '-' || array[i][j] == '+') && j == 0)
-			j++;
+		{
+			if (ft_isdigit(array[i][j + 1]))
+				j++;
+			else
+				print_error();
+		}
 		while (array[i][j])
 		{
 			if (!ft_isdigit(array[i][j]))
-			{
 				print_error();
-			}
 			j++;
 		}
 		i++;
