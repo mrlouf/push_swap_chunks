@@ -13,6 +13,8 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
+/*	Returns the position of the min element of the stack, (0) if first	*/
+
 int		locate_min(t_stack *stack_a)
 {
 	int		tmp;
