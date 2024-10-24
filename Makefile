@@ -21,7 +21,8 @@ SRCS		=	srcs/push_swap.c	\
 				srcs/rotate.c		\
 				srcs/rotate2.c		\
 				srcs/reverse.c		\
-				srcs/sort_small.c
+				srcs/sort_small.c	\
+				srcs/sort_big.c
 
 HEADER		=	includes/push_swap.h
 

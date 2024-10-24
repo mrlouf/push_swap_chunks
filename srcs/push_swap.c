@@ -27,16 +27,14 @@ int	main(int ac, char **av)
 		stack_a = NULL;
 		stack_b = NULL;
 		stack_a = form_stack(args, size);
-		/*	TODO
-		 *	- set up sorting algo: return nothing if input is already sorted
-		 */	
-		sort_small(&stack_a, &stack_b, size);
+		sort(&stack_a, &stack_b, size);
+/*
 		t_stack *tmp = stack_a;
 		while (tmp != NULL)
 		{
 			ft_printf("%d ", tmp->value);
 		 	tmp = tmp->next;
-		}
+		} */
 		free_all(stack_a, stack_b);
 	}
 	return (0);

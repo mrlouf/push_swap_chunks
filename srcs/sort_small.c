@@ -61,7 +61,7 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	rotate_a(stack_a);
 }
 
-void	sort_small(t_stack **stack_a, t_stack **stack_b, int size)
+void	sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	if (is_sorted(stack_a))
 		return ;
@@ -74,5 +74,5 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b, int size)
 	else if (size == 5)
 		sort_five(stack_a, stack_b);
 	else if (size > 5)
-		ft_printf("Not yet\n");
+		sort_big(stack_a, stack_b);
 }

@@ -61,11 +61,15 @@ void		reverse_ab(t_stack **stack_a, t_stack **stack_b);
 //	SORTING ALGO
 
 int			is_sorted(t_stack **stack_a);
-void		sort_small(t_stack **stack_a, t_stack **stack_b, int size);
+void		sort(t_stack **stack_a, t_stack **stack_b, int size);
+void		sort_big(t_stack **stack_a, t_stack **stack_b);
 void		sort_three(t_stack **stack_a);
 void		sort_four(t_stack **stack_a, t_stack **stack_b);
 void		sort_five(t_stack **stack_a, t_stack **stack_b);
 int			locate_min(t_stack *stack_a);
 int			locate_max(t_stack *stack_a);
+int			cost_min(t_stack **stack_a);
+int			cost_max(t_stack **stack_a);
+void		stack_back(t_stack **stack_a, t_stack **stack_b);
 
 #endif

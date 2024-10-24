@@ -67,6 +67,9 @@ int		locate_max(t_stack *stack_a)
 	return (pos);
 }
 
+/*	Rotate the min/max number to the top of the stack, or reverse if
+	less costly in movements.	*/
+
 void	rotate_to_min(t_stack **stack_a)
 {
 	int	size;
