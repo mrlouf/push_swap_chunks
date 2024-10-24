@@ -13,44 +13,84 @@
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
-int		is_min(t_stack *stack_a)
+int		locate_min(t_stack *stack_a)
 {
-	t_stack	*first;
+	int		tmp;
+	int		i;
+	int		pos;
+	int		size;
 	
-	first = stack_a;
+	i = 1;
+	pos = 0;
+	tmp = stack_a->value;
+	size = stack_size(stack_a);
 	stack_a = stack_a->next;
-	while (stack_a->next != NULL)
+	while (i < size)
 	{
-		if (first->value > stack_a->value)
-			return (0);
+		if (tmp > stack_a->value)
+		{		
+			tmp = stack_a->value;
+			pos = i;
+		}
 		stack_a = stack_a->next;
+		i++;
 	}
-	return (1);
+	return (pos);
 }
 
-int		is_max(t_stack *stack_a)
+/*	Returns the position of the max element of the stack, (0) if first	*/
+
+int		locate_max(t_stack *stack_a)
 {
-	t_stack	*first;
+	int		tmp;
+	int		i;
+	int		pos;
+	int		size;
 	
-	first = stack_a;
+	i = 1;
+	pos = 0;
+	tmp = stack_a->value;
+	size = stack_size(stack_a);
 	stack_a = stack_a->next;
-	while (stack_a->next != NULL)
+	while (i < size)
 	{
-		if (first->value < stack_a->value)
-			return (0);
+		if (tmp < stack_a->value)
+		{		
+			tmp = stack_a->value;
+			pos = i;
+		}
 		stack_a = stack_a->next;
+		i++;
 	}
-	return (1);
+	return (pos);
 }
 
 void	rotate_to_min(t_stack **stack_a)
 {
-	while (!is_min(*stack_a))
-		rotate_a(stack_a);
+	int	size;
+	
+	size = stack_size(*stack_a);
+	while (locate_min(*stack_a) != 0)
+	{
+		if (locate_min(*stack_a) <= (size / 2))
+			rotate_a(stack_a);
+		else if (locate_min(*stack_a) > (size / 2)
+			|| (locate_min(*stack_a) == 3 && size == 5))
+			reverse_a(stack_a);
+	}
 }
 
 void	rotate_to_max(t_stack **stack_a)
 {
-	while (!is_max(*stack_a))
-		rotate_a(stack_a);
+	int	size;
+	
+	size = stack_size(*stack_a);
+	while (locate_max(*stack_a) != 0)
+	{
+		if (locate_max(*stack_a) <= (size / 2))
+			rotate_a(stack_a);
+		else if (locate_max(*stack_a) > (size / 2)
+			|| (locate_max(*stack_a) == 3 && size == 5))
+			reverse_a(stack_a);
+	}
 }

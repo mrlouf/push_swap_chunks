@@ -16,21 +16,21 @@
 int	main(int ac, char **av)
 {
 	int		*args;
-	int 	len;
+	int 	size;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
 	if (ac >= 2)
 	{
-		len = check_format(av) - 1;
-		args = get_args(av, len);
+		size = check_format(av) - 1;
+		args = get_args(av, size);
 		stack_a = NULL;
 		stack_b = NULL;
-		stack_a = form_stack(args, len);
+		stack_a = form_stack(args, size);
 		/*	TODO
 		 *	- set up sorting algo: return nothing if input is already sorted
 		 */	
-		sort_small(&stack_a, &stack_b, len);
+		sort_small(&stack_a, &stack_b, size);
 		t_stack *tmp = stack_a;
 		while (tmp != NULL)
 		{

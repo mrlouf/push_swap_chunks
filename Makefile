@@ -15,6 +15,7 @@ SRCS		=	srcs/push_swap.c	\
 				srcs/free_stacks.c	\
 				srcs/get_args.c		\
 				srcs/stack_utils.c	\
+				srcs/stack_utils2.c	\
 				srcs/swap.c			\
 				srcs/push.c			\
 				srcs/rotate.c		\

@@ -25,7 +25,7 @@ typedef struct s_stack
 
 // INPUT CHECK & BUILD STACK
 
-int			*get_args(char **array, int len);
+int			*get_args(char **array, int size);
 int			check_format(char **array);
 int			check_value(char *str);
 void		check_double(char **array);
@@ -36,6 +36,7 @@ void		print_error(void);
 t_stack		*new_stack(int value);
 void		stackadd_back(t_stack **stack, t_stack *new);
 t_stack		*stacklast(t_stack *stack);
+int			stack_size(t_stack *stack);
 
 // MOVES
 
@@ -64,7 +65,7 @@ void		sort_small(t_stack **stack_a, t_stack **stack_b, int size);
 void		sort_three(t_stack **stack_a);
 void		sort_four(t_stack **stack_a, t_stack **stack_b);
 void		sort_five(t_stack **stack_a, t_stack **stack_b);
-int			is_min(t_stack *stack_a);
-int			is_max(t_stack *stack_a);
+int			locate_min(t_stack *stack_a);
+int			locate_max(t_stack *stack_a);
 
 #endif

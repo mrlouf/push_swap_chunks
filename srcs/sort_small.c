@@ -74,5 +74,5 @@ void	sort_small(t_stack **stack_a, t_stack **stack_b, int size)
 	else if (size == 5)
 		sort_five(stack_a, stack_b);
 	else if (size > 5)
-		ft_printf("Is max: %d\n", is_max(*stack_a));
+		ft_printf("Not yet\n");
 }

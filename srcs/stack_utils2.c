@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_args.c                                   :+:      :+:    :+:   */
+/*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nponchon <nponchon@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 10:08:34 by nponchon          #+#    #+#             */
-/*   Updated: 2024/10/15 18:55:41 by nponchon         ###   ########.fr       */
+/*   Created: 2024/10/24 14:00:18 by nponchon          #+#    #+#             */
+/*   Updated: 2024/10/24 14:02:42 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
-int	*get_args(char **array, int size)
+int	stack_size(t_stack *stack)
 {
-	int		*args;
-	int		i;
+	int i;
 
-	check_double(array);
-	args = (int *)malloc(sizeof(int) * (size));
-	if (!args)
-		return (NULL);
-	i = 0;
-	while (++i <= size)
+	if (stack == NULL)
+		return (0);
+	i = 1;
+	while (stack->next != NULL)
 	{
-		if (check_value(array[i]))
-			args[i - 1] = ft_atoi(array[i]);
-		else
-		{
-			free(args);
-			print_error();
-		}
+		stack = stack->next;
+		i++;
 	}
-	return (args);
+	return (i);
 }
