@@ -21,7 +21,7 @@ SRCS		=	srcs/push_swap.c	\
 				srcs/rotate.c		\
 				srcs/rotate2.c		\
 				srcs/reverse.c		\
-				srcs/sort_small.c	\
+				srcs/sort.c			\
 				srcs/sort_big.c
 
 HEADER		=	includes/push_swap.h
@@ -40,13 +40,11 @@ INCLUDE		=	-I/
 
 # -=-=-=-=-    TARGETS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-all: $(NAME) $(LIBFT)
+all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS) $(SRCS) $(HEADER) $(MAKE)
-	$(CC) $(CFLAGS) $(OBJS) $(INCLUDE)$(HEADER) $(LIBDIR)$(LIBFT) -o $(NAME)
-
-$(LIBFT): $(MAKE)
+$(NAME): $(OBJS) $(SRCS) $(HEADER) $(MAKE)
 	make -C $(LIBDIR)
+	$(CC) $(CFLAGS) $(OBJS) $(INCLUDE)$(HEADER) $(LIBDIR)$(LIBFT) -o $(NAME)
 
 %.o: %.c $(HEADER) $(MAKE)
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
